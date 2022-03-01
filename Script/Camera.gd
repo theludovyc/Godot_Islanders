@@ -5,10 +5,11 @@ var Selection = preload("res://Scene/Selection.tscn")
 var selection
 
 onready var raycast = $RayCast
+onready var origin = get_parent()
 
 func pop_selection():
 	selection = Selection.instance()
-	get_parent().call_deferred("add_child", selection)
+	get_node("/root/Game").call_deferred("add_child", selection)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -13,16 +13,6 @@
 [node name="Hex_Column" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.159, 0 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.838243, 0.545298, 0, -0.545298, 0.838243, 0, 8.13498, 7.93813 )
-script = ExtResource( 5 )
-
-[node name="RayCast" type="RayCast" parent="Camera"]
-enabled = true
-cast_to = Vector3( 0, 0, -50 )
-collide_with_areas = true
-collide_with_bodies = false
-
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.717081, 0.38435, -0.581438, 0, 0.834213, 0.551442, 0.69699, -0.395429, 0.598198, -1.5218, 6.52862, 4.04269 )
 light_energy = 0.65
@@ -37,3 +27,15 @@ material/0 = null
 transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
+
+[node name="Camera_Origin" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="Camera_Origin"]
+transform = Transform( 1, 0, 0, 0, 0.838243, 0.545298, 0, -0.545298, 0.838243, 0, 8.13498, 7.93813 )
+script = ExtResource( 5 )
+
+[node name="RayCast" type="RayCast" parent="Camera_Origin/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -50 )
+collide_with_areas = true
+collide_with_bodies = false
