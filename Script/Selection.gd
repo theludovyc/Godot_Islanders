@@ -4,9 +4,13 @@ var mat_selec = preload("res://Art/Material/Selection.tres")
 var mat_selec_red = preload("res://Art/Material/Selection_Red.tres")
 var Building = preload("res://Scene/Building.tscn")
 
-onready var mesh = $Mesh
-
 var isRed := false
+
+var bonus:int
+
+onready var mesh = $Mesh
+onready var label = $Viewport/Label
+onready var radar = $Radar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,9 +30,18 @@ func _on_area_entered(area):
 	isRed = true
 	pass # Replace with function body.
 
-
 func _on_Building_area_exited(area):
 	if get_overlapping_areas().empty():
 		isRed = false
 		mesh.set_surface_material(0, mat_selec)
+	pass # Replace with function body.
+
+func _on_Radar_area_entered(area):
+	bonus = radar.get_overlapping_areas().size()
+	label.text = str(bonus)
+	pass # Replace with function body.
+
+func _on_Radar_area_exited(area):
+	bonus = radar.get_overlapping_areas().size()
+	label.text = str(bonus)
 	pass # Replace with function body.

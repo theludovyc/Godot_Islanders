@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Art/Material/Selection.tres" type="Material" id=1]
 [ext_resource path="res://Art/Building/SM_Bld_Adventure_Tower_01.obj" type="ArrayMesh" id=2]
@@ -9,6 +9,8 @@ extents = Vector3( 0.3, 0.75, 0.3 )
 
 [sub_resource type="ViewportTexture" id=2]
 viewport_path = NodePath("Viewport")
+
+[sub_resource type="SphereShape" id=3]
 
 [node name="Selection" type="Area"]
 collision_layer = 2
@@ -39,5 +41,16 @@ margin_bottom = 14.0
 text = "Blablabla
 "
 
+[node name="Radar" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Radar"]
+shape = SubResource( 3 )
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Building_area_exited"]
+[connection signal="area_entered" from="Radar" to="." method="_on_Radar_area_entered"]
+[connection signal="area_exited" from="Radar" to="." method="_on_Radar_area_exited"]
