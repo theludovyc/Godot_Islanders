@@ -23,11 +23,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var camera_global_pos = camera_origin.to_global(camera.translation)
-	
-	var sprite_global_pos = to_global(sprite.translation)
-	
-	sprite.look_at(Vector3(sprite_global_pos.x, camera_global_pos.y, camera_global_pos.z), Vector3.UP)
+	sprite.look_at(camera_origin.to_global(camera.translation), Vector3.UP)
 #	pass
 
 func pop():
