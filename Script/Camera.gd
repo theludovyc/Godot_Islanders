@@ -10,6 +10,8 @@ var selection
 
 func pop_selection():
 	selection = Selection.instance()
+	selection.camera = self
+	selection.camera_origin = get_parent()
 	get_node("/root/Game").call_deferred("add_child", selection)
 
 func add_zoom(z:float):
