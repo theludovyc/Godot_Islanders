@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Art/Hex/Hex_Column.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Script/Camera_Origin.gd" type="Script" id=2]
 [ext_resource path="res://Art/Material/Bleu.tres" type="Material" id=3]
 [ext_resource path="res://Script/Camera.gd" type="Script" id=5]
 
@@ -29,9 +30,12 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 
 [node name="Camera_Origin" type="Spatial" parent="."]
+script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="Camera_Origin"]
 transform = Transform( 1, 0, 0, 0, 0.838243, 0.545298, 0, -0.545298, 0.838243, 0, 8.13498, 7.93813 )
+projection = 1
+size = 10.0
 script = ExtResource( 5 )
 
 [node name="RayCast" type="RayCast" parent="Camera_Origin/Camera"]
