@@ -14,6 +14,8 @@ var bonus:int
 var building
 var mesh
 
+var index := 0
+
 onready var label = $Viewport/Label
 onready var radar = $Radar
 onready var sprite = $Sprite3D
@@ -21,7 +23,12 @@ onready var camera_origin = $"/root/Game/Camera_Origin"
 onready var camera = $"/root/Game/Camera_Origin/Camera"
 
 func add_building():
-	building = Buildings[0].instance()
+	building = Buildings[index].instance()
+	
+	index += 1
+	
+	if index > Buildings.size() - 1:
+		index = 0
 	
 	mesh = building.get_node("MeshInstance")
 	mesh.set_surface_material(0, mat_selec)
