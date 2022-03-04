@@ -5,12 +5,14 @@ signal pop_building(bonus)
 var mat_selec = preload("res://Art/Material/Selection.tres")
 var mat_selec_red = preload("res://Art/Material/Selection_Red.tres")
 var mat_lambert = preload("res://Art/Material/lambert101.material")
-var Buildings = [preload("res://Scene/Adventure_Tower_01.tscn"), preload("res://Scene/Adventure_House_01.tscn")]
+var Buildings = {"Adventure_Tower_01":preload("res://Scene/Adventure_Tower_01.tscn"),
+				"Adventure_House_01":preload("res://Scene/Adventure_House_01.tscn")}
 
 var isRed := false
 
 var bonus:int
 
+var building_name = "Adventure_Tower_01"
 var building
 var mesh
 
@@ -23,12 +25,7 @@ onready var camera_origin = $"/root/Game/Camera_Origin"
 onready var camera = $"/root/Game/Camera_Origin/Camera"
 
 func add_building():
-	building = Buildings[index].instance()
-	
-	index += 1
-	
-	if index > Buildings.size() - 1:
-		index = 0
+	building = Buildings[building_name].instance()
 	
 	mesh = building.get_node("MeshInstance")
 	mesh.set_surface_material(0, mat_selec)
@@ -59,14 +56,16 @@ func _ready():
 	add_building()
 	pass # Replace with function body.
 
+func _unhandled_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed and !isRed:
+			emit_signal("pop_building", bonus)
+			pop_building()
+			add_building()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	sprite.look_at(camera_origin.to_global(camera.translation), Vector3.UP)
-
-	if Input.is_action_just_pressed("mouse_left") and !isRed:
-		emit_signal("pop_building", bonus)
-		pop_building()
-		add_building()
 
 func _on_Building_area_entered(area):
 	mesh.set_surface_material(0, mat_selec_red)
@@ -87,4 +86,12 @@ func _on_Radar_area_entered(area):
 func _on_Radar_area_exited(area):
 	bonus = radar.get_overlapping_areas().size()
 	label.text = str(bonus)
+	pass # Replace with function body.
+
+func _on_GUI_button_pressed(button_name):
+	building.queue_free()
+	
+	building_name = button_name
+	
+	add_building()
 	pass # Replace with function body.
