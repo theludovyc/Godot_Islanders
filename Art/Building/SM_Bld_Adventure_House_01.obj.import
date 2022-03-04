@@ -14,7 +14,7 @@ dest_files=[ "res://.import/SM_Bld_Adventure_House_01.obj-34c658af0425f073398f6a
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
 offset_mesh=Vector3( 0, 0, 0 )
 octahedral_compression=true
 optimize_mesh_flags=4286

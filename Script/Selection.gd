@@ -4,7 +4,7 @@ signal pop_building(bonus)
 
 var mat_selec = preload("res://Art/Material/Selection.tres")
 var mat_selec_red = preload("res://Art/Material/Selection_Red.tres")
-var Building = preload("res://Scene/Building.tscn")
+var Building = preload("res://Scene/Adventure_Tower_01.tscn")
 
 var isRed := false
 
