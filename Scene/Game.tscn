@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Art/Hex/Hex_Column.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Camera_Origin.gd" type="Script" id=2]
 [ext_resource path="res://Art/Material/Bleu.tres" type="Material" id=3]
+[ext_resource path="res://Scene/GUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Script/Camera.gd" type="Script" id=5]
 
 [sub_resource type="CubeMesh" id=2]
@@ -44,3 +45,5 @@ collide_with_bodies = false
 transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
+
+[node name="GUI" parent="." instance=ExtResource( 4 )]
