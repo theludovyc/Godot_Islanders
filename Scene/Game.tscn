@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Art/Hex/Hex_Column.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Cube_Column.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Camera_Origin.gd" type="Script" id=2]
 [ext_resource path="res://Art/Material/Bleu.tres" type="Material" id=3]
 [ext_resource path="res://Scene/GUI.tscn" type="PackedScene" id=4]
@@ -14,12 +14,6 @@
 
 [node name="Game" type="Node"]
 script = ExtResource( 7 )
-
-[node name="Hex_Column" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.159, 0 )
-
-[node name="Hex_Column2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 3.966, 2.55 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.717081, 0.38435, -0.581438, 0, 0.834213, 0.551442, 0.69699, -0.395429, 0.598198, -1.5218, 6.52862, 4.04269 )
@@ -56,6 +50,9 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
+
+[node name="Spatial" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.89859, 0 )
 
 [connection signal="pop_building" from="Selection" to="." method="_on_Selection_pop_building"]
 [connection signal="button_pressed" from="GUI" to="Selection" method="_on_GUI_button_pressed"]

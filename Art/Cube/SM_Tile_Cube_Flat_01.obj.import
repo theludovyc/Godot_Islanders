@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Tile_Cube_Flat_01.obj-6ecbc9af552759cce0ee7ff4b04b6a8e.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Tile_Cube_Flat_01.obj-6ecbc9af552759cce0ee7ff4b04b6a8e.mesh" ]
+
+source_file="res://Art/Cube/SM_Tile_Cube_Flat_01.obj"
+dest_files=[ "res://.import/SM_Tile_Cube_Flat_01.obj-6ecbc9af552759cce0ee7ff4b04b6a8e.mesh", "res://.import/SM_Tile_Cube_Flat_01.obj-6ecbc9af552759cce0ee7ff4b04b6a8e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
