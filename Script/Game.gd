@@ -16,17 +16,19 @@ func _ready():
 	noise.period = 0.1
 	noise.persistence = 0
 	
-	var vec_max = Vector2(5, 5)
+	var vec_max = Vector2(11, 11)
 	var vec_center = vec_max/2
 	
-	for i in 5:
-		for j in 5:
+	for i in 10:
+		for j in 10:
 			var column = Cube_Column.instance()
 			var noi = noise.get_noise_2d(i, j)
 			
+			prints("Game", noi)
+			
 			var vec = Vector2(i, j) - vec_center
 			
-			column.translation = Vector3(5*i, noi + vec.normalized().length() , 5*j)
+			column.translation = Vector3(2.5*i, noi + range_lerp(vec.length(), 0, vec_center.length(), vec_center.length(), 0), 2.5*j)
 			add_child(column)
 	pass # Replace with function body.
 

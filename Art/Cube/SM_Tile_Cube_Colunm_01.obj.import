@@ -14,7 +14,7 @@ dest_files=[ "res://.import/SM_Tile_Cube_Colunm_01.obj-3846be8d0ce43db61f3a027a4
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+scale_mesh=Vector3( 0.005, 0.005, 0.005 )
 offset_mesh=Vector3( 0, 0, 0 )
 octahedral_compression=true
 optimize_mesh_flags=4286
