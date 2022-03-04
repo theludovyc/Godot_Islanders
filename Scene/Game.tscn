@@ -18,6 +18,9 @@ script = ExtResource( 7 )
 [node name="Hex_Column" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.159, 0 )
 
+[node name="Hex_Column2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 3.966, 2.55 )
+
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.717081, 0.38435, -0.581438, 0, 0.834213, 0.551442, 0.69699, -0.395429, 0.598198, -1.5218, 6.52862, 4.04269 )
 light_energy = 0.65
