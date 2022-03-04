@@ -4,25 +4,15 @@ const zoom_speed = 0.5
 const zoom_min = 5
 const zoom_max = 15
 
-var Selection = preload("res://Scene/Selection.tscn")
-
-var selection
-
-func pop_selection():
-	selection = Selection.instance()
-	selection.camera = self
-	selection.camera_origin = get_parent()
-	get_node("/root/Game").call_deferred("add_child", selection)
-
 func add_zoom(z:float):
 	size = clamp(size + z, zoom_min, zoom_max)
 
+onready var selection = $"/root/Game/Selection"
 onready var raycast = $RayCast
 onready var origin = get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pop_selection()
 	pass # Replace with function body.
 
 func _unhandled_input(event):
@@ -43,6 +33,3 @@ func _process(delta):
 		selection.translation = raycast.get_collision_point()
 	else:
 		selection.visible = false
-
-	if Input.is_action_just_pressed("mouse_left") and !selection.isRed:
-		selection.pop()

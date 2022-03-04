@@ -1,16 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Art/Hex/Hex_Column.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Camera_Origin.gd" type="Script" id=2]
 [ext_resource path="res://Art/Material/Bleu.tres" type="Material" id=3]
 [ext_resource path="res://Scene/GUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Script/Camera.gd" type="Script" id=5]
+[ext_resource path="res://Scene/Selection.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Script/Game.gd" type="Script" id=7]
 
 [sub_resource type="CubeMesh" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
 
 [node name="Game" type="Node"]
+script = ExtResource( 7 )
 
 [node name="Hex_Column" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.159, 0 )
@@ -25,6 +28,9 @@ shadow_bias = -0.3
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477826, -4.51835 )
 mesh = SubResource( 2 )
 material/0 = null
+
+[node name="Selection" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, -4.76837e-07 )
 
 [node name="Camera_Origin" type="Spatial" parent="."]
 script = ExtResource( 2 )
@@ -47,3 +53,5 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
+
+[connection signal="pop_building" from="Selection" to="." method="_on_Selection_pop_building"]
