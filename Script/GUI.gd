@@ -41,6 +41,12 @@ func hide_pack():
 func show_pack():
 	node_pack.show()
 
+func hide_building():
+	node_building.hide()
+	
+func show_building():
+	node_building.show()
+
 func _on_button_building_pressed(button_name):
 	emit_signal("button_pressed", button_name)
 

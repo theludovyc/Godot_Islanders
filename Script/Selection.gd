@@ -56,6 +56,11 @@ func pop_building():
 func _ready():
 	pass # Replace with function body.
 
+func reset():
+	hide()
+	building_name = ""
+	building.queue_free()
+
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed and !building_name.empty() and !isRed:

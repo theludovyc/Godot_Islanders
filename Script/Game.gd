@@ -11,6 +11,7 @@ var score := 0
 var score_max := 2
 
 onready var gui = $GUI
+onready var selection = $Selection
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,6 +51,8 @@ func _on_Selection_pop_building(bonus):
 	
 	if score > score_max:
 		score = 0
+		gui.hide_building()
+		selection.reset()
 		gui.show_pack()
 	
 	gui.update_score(score)
@@ -65,4 +68,5 @@ func _on_GUI_button_pack_pressed(button_name):
 			gui.add_button_building("Adventure_House_01")
 	
 	gui.hide_pack()
+	gui.show_building()
 	pass # Replace with function body.
