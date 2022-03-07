@@ -2,7 +2,8 @@ extends Control
 
 signal button_pressed(button_name)
 
-onready var node_score = $Score
+onready var node_score = $ScoreContainer/Score
+onready var node_score_max = $ScoreContainer/ScoreMax
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +11,9 @@ func _ready():
 
 func update_score(score:int):
 	node_score.text = str(score)
+	
+func update_score_max(score:int):
+	node_score_max.text = str(score)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

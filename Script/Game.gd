@@ -8,11 +8,15 @@ const land_width = 3
 const pop_threshold = -0.2
 
 var score := 0
+var score_max := 5
 
 onready var gui = $GUI
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	gui.update_score(score)
+	gui.update_score_max(score_max)
+	
 	randomize()
 	
 	var noise = OpenSimplexNoise.new()
