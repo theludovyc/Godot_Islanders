@@ -5,7 +5,7 @@
 [ext_resource path="res://Art/Cube/SM_Tile_Cube_Flat_01.obj" type="ArrayMesh" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 2, 0.1, 2 )
+extents = Vector3( 2.25, 0.1, 2.25 )
 
 [node name="Cube_Column" type="Area"]
 
