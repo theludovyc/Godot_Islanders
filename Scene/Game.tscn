@@ -52,4 +52,5 @@ material/0 = ExtResource( 3 )
 [node name="GUI" parent="." instance=ExtResource( 4 )]
 
 [connection signal="pop_building" from="Selection" to="." method="_on_Selection_pop_building"]
+[connection signal="button_pack_pressed" from="GUI" to="." method="_on_GUI_button_pack_pressed"]
 [connection signal="button_pressed" from="GUI" to="Selection" method="_on_GUI_button_pressed"]

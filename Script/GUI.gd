@@ -8,6 +8,7 @@ var icon = preload("res://icon.png")
 onready var node_score = $ScoreContainer/Score
 onready var node_score_max = $ScoreContainer/ScoreMax
 onready var node_building = $BuildingContainer
+onready var node_pack = $PackContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,19 +33,12 @@ func add_button_building(button_name:String):
 	button.connect("pressed", self, "_on_button_building_pressed", [button_name])
 	
 	node_building.add_child(button)
+	
+func hide_pack():
+	node_pack.hide()
 
 func _on_button_building_pressed(button_name):
 	emit_signal("button_pressed", button_name)
-
-func _on_Adventure_Tower_01_pressed():
-	emit_signal("button_pressed", "Adventure_Tower_01")
-	pass # Replace with function body.
-
-
-func _on_Adventure_House_01_pressed():
-	emit_signal("button_pressed", "Adventure_House_01")
-	pass # Replace with function body.
-
 
 func _on_Pack_Adventure_Tower_pressed():
 	emit_signal("button_pack_pressed", "Pack_Adventure_Tower")

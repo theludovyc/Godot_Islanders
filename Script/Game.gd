@@ -49,3 +49,11 @@ func _on_Selection_pop_building(bonus):
 	score += bonus
 	gui.update_score(score)
 	pass # Replace with function body.
+
+
+func _on_GUI_button_pack_pressed(button_name):
+	match(button_name):
+		"Pack_Adventure_Tower":
+			gui.add_button_building("Adventure_Tower_01")
+			gui.hide_pack()
+	pass # Replace with function body.
