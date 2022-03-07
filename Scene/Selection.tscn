@@ -23,6 +23,7 @@ transparent_bg = true
 render_target_v_flip = true
 
 [node name="Label" parent="Viewport" instance=ExtResource( 4 )]
+visible = false
 
 [node name="Radar" type="Area" parent="."]
 collision_layer = 0

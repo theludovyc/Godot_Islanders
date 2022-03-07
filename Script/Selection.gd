@@ -60,13 +60,14 @@ func reset():
 	hide()
 	building_name = ""
 	building.queue_free()
+	building = null
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed and !building_name.empty() and !isRed:
-			emit_signal("pop_building", bonus)
 			pop_building()
 			add_building()
+			emit_signal("pop_building", bonus)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -96,8 +97,15 @@ func _on_Radar_area_exited(area):
 func _on_GUI_button_pressed(button_name):
 	if building:
 		building.queue_free()
+		building = null
 	
 	building_name = button_name
 	
 	add_building()
+	label.show()
 	pass # Replace with function body.
+	
+func hide():
+	.hide()
+	
+	label.hide()
