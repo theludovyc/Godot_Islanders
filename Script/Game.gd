@@ -6,6 +6,7 @@ const column_width = 5
 const column_min_height = 0.25
 const land_width = 3
 const pop_threshold = -0.2
+const packs = {"Adventure":["Adventure_Tower_01", "Adventure_House_01"]}
 
 var score := 0
 var score_max := 2
@@ -15,6 +16,9 @@ onready var selection = $Selection
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for key in packs:
+		gui.add_button_pack(key)
+	
 	gui.update_score(score)
 	gui.update_score_max(score_max)
 	
@@ -45,7 +49,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
 func _on_Selection_pop_building(bonus):
 	score += bonus
 	
@@ -58,14 +61,11 @@ func _on_Selection_pop_building(bonus):
 	gui.update_score(score)
 	pass # Replace with function body.
 
-
 func _on_GUI_button_pack_pressed(button_name):
-	match(button_name):
-		"Pack_Adventure_Tower":
-			gui.add_button_building("Adventure_Tower_01")
-			
-		"Pack_Adventure_House":
-			gui.add_button_building("Adventure_House_01")
+	var names = packs[button_name]
+	
+	for _name in names:
+		gui.add_button_building(_name)
 	
 	gui.hide_pack()
 	gui.show_building()
