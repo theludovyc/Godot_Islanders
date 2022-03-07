@@ -25,17 +25,21 @@ func update_score_max(score:int):
 #	pass
 
 func add_button_building(button_name:String):
-	var button = TextureButton.new()
-	button.name = button_name
-	
-	button.texture_normal = icon
-	
-	button.connect("pressed", self, "_on_button_building_pressed", [button_name])
-	
-	node_building.add_child(button)
+	if !node_building.has_node(button_name):
+		var button = TextureButton.new()
+		button.name = button_name
+		
+		button.texture_normal = icon
+		
+		button.connect("pressed", self, "_on_button_building_pressed", [button_name])
+		
+		node_building.add_child(button)
 	
 func hide_pack():
 	node_pack.hide()
+	
+func show_pack():
+	node_pack.show()
 
 func _on_button_building_pressed(button_name):
 	emit_signal("button_pressed", button_name)

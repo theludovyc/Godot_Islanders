@@ -47,6 +47,11 @@ func _ready():
 
 func _on_Selection_pop_building(bonus):
 	score += bonus
+	
+	if score > score_max:
+		score = 0
+		gui.show_pack()
+	
 	gui.update_score(score)
 	pass # Replace with function body.
 
