@@ -12,7 +12,7 @@ var isRed := false
 
 var bonus:int
 
-var building_name = "Adventure_Tower_01"
+var building_name:String
 var building
 var mesh
 
@@ -25,15 +25,16 @@ onready var camera_origin = $"/root/Game/Camera_Origin"
 onready var camera = $"/root/Game/Camera_Origin/Camera"
 
 func add_building():
-	building = Buildings[building_name].instance()
-	
-	mesh = building.get_node("MeshInstance")
-	mesh.set_surface_material(0, mat_selec)
-	
-	building.connect("area_entered", self, "_on_Building_area_entered")
-	building.connect("area_exited", self, "_on_Building_area_exited")
-	
-	add_child(building)
+	if !building_name.empty():
+		building = Buildings[building_name].instance()
+		
+		mesh = building.get_node("MeshInstance")
+		mesh.set_surface_material(0, mat_selec)
+		
+		building.connect("area_entered", self, "_on_Building_area_entered")
+		building.connect("area_exited", self, "_on_Building_area_exited")
+		
+		add_child(building)
 
 func reparent(node):
 	get_parent().add_child(node)
@@ -53,12 +54,11 @@ func pop_building():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_building()
 	pass # Replace with function body.
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed and !isRed:
+		if event.button_index == BUTTON_LEFT and event.pressed and !building_name.empty() and !isRed:
 			emit_signal("pop_building", bonus)
 			pop_building()
 			add_building()
@@ -89,7 +89,8 @@ func _on_Radar_area_exited(area):
 	pass # Replace with function body.
 
 func _on_GUI_button_pressed(button_name):
-	building.queue_free()
+	if building:
+		building.queue_free()
 	
 	building_name = button_name
 	

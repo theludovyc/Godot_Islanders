@@ -8,7 +8,7 @@ const land_width = 3
 const pop_threshold = -0.2
 
 var score := 0
-var score_max := 5
+var score_max := 2
 
 onready var gui = $GUI
 
@@ -55,5 +55,9 @@ func _on_GUI_button_pack_pressed(button_name):
 	match(button_name):
 		"Pack_Adventure_Tower":
 			gui.add_button_building("Adventure_Tower_01")
-			gui.hide_pack()
+			
+		"Pack_Adventure_House":
+			gui.add_button_building("Adventure_House_01")
+	
+	gui.hide_pack()
 	pass # Replace with function body.
