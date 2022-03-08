@@ -48,9 +48,23 @@ config/name="Islanders_Like"
 run/main_scene="res://Scene/Game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Load="*res://Script/Load.gd"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/TwitchChat/plugin.cfg" )
+
+[importer_defaults]
+
+wavefront_obj={
+"generate_tangents": true,
+"octahedral_compression": true,
+"offset_mesh": Vector3( 0, 0, 0 ),
+"optimize_mesh_flags": 4286,
+"scale_mesh": Vector3( 0.01, 0.01, 0.01 )
+}
 
 [input]
 

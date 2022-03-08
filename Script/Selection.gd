@@ -5,8 +5,6 @@ signal pop_building(bonus)
 var mat_selec = preload("res://Art/Material/Selection.tres")
 var mat_selec_red = preload("res://Art/Material/Selection_Red.tres")
 var mat_lambert = preload("res://Art/Material/lambert101.material")
-var Buildings = {"Adventure_Tower_01":preload("res://Scene/Adventure_Tower_01.tscn"),
-				"Adventure_House_01":preload("res://Scene/Adventure_House_01.tscn")}
 
 var isRed := false
 
@@ -23,10 +21,11 @@ onready var radar = $Radar
 onready var sprite = $Sprite3D
 onready var camera_origin = $"/root/Game/Camera_Origin"
 onready var camera = $"/root/Game/Camera_Origin/Camera"
+onready var game = get_parent()
 
 func add_building():
 	if !building_name.empty():
-		building = Buildings[building_name].instance()
+		building = Load.packs[game.current_pack_name][building_name].instance()
 		
 		mesh = building.get_node("MeshInstance")
 		mesh.set_surface_material(0, mat_selec)

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_Adventure_House_02.obj-ea7a637ce3f3eb97311c493f288b5f00.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_Adventure_House_02.obj-ea7a637ce3f3eb97311c493f288b5f00.mesh" ]
+
+source_file="res://Art/Adventure/SM_Bld_Adventure_House_02.obj"
+dest_files=[ "res://.import/SM_Bld_Adventure_House_02.obj-ea7a637ce3f3eb97311c493f288b5f00.mesh", "res://.import/SM_Bld_Adventure_House_02.obj-ea7a637ce3f3eb97311c493f288b5f00.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

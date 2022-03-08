@@ -6,17 +6,18 @@ const column_width = 5
 const column_min_height = 0.25
 const land_width = 3
 const pop_threshold = -0.2
-const packs = {"Adventure":["Adventure_Tower_01", "Adventure_House_01"]}
 
 var score := 0
 var score_max := 2
+
+var current_pack_name:String
 
 onready var gui = $GUI
 onready var selection = $Selection
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for key in packs:
+	for key in Load.packs:
 		gui.add_button_pack(key)
 	
 	gui.update_score(score)
@@ -62,7 +63,9 @@ func _on_Selection_pop_building(bonus):
 	pass # Replace with function body.
 
 func _on_GUI_button_pack_pressed(button_name):
-	var names = packs[button_name]
+	current_pack_name = button_name
+	
+	var names = Load.packs[button_name]
 	
 	for _name in names:
 		gui.add_button_building(_name)
