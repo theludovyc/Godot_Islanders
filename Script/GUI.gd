@@ -54,6 +54,10 @@ func hide_building():
 	
 func show_building():
 	node_building.show()
+	
+func delete_button_building():
+	for child in node_building.get_children():
+		child.queue_free()
 
 func _on_button_building_pressed(button_name):
 	emit_signal("button_pressed", button_name)
