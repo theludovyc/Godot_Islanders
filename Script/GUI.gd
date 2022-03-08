@@ -38,7 +38,12 @@ func add_button_pack(button_name:String):
 	var button = TextureButton.new()
 	
 	button.name = button_name
-	button.texture_normal = icon
+	
+	if Load.pack_icons.has(button_name):
+		button.texture_normal = Load.pack_icons[button_name]
+	else:
+		button.texture_normal = icon
+		
 	button.connect("pressed", self, "_on_button_pack_pressed", [button_name])
 	
 	node_pack.add_child(button)
