@@ -39,8 +39,14 @@ func add_button_pack(button_name:String):
 	
 	button.name = button_name
 	
+	button.rect_min_size = Vector2(64, 64)
+	
 	if Load.pack_icons.has(button_name):
 		button.texture_normal = Load.pack_icons[button_name]
+		
+		button.expand = true
+		
+		button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 	else:
 		button.texture_normal = icon
 		

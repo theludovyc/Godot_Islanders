@@ -38,8 +38,6 @@ func _ready():
 			var column = Cube_Column.instance()
 			var noi = noise.get_noise_2d(i, j)
 			
-			prints("Game", noi)
-			
 			if noi > pop_threshold:
 				column.translation = Vector3(column_width*i, column_min_height + noi + -pop_threshold, column_width*j)
 				add_child(column)
