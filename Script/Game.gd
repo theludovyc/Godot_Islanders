@@ -51,7 +51,7 @@ func _ready():
 func _on_Selection_pop_building(bonus):
 	score += bonus
 	
-	if score > score_max:
+	if score >= score_max:
 		score = 0
 		gui.hide_building()
 		selection.reset()
