@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Env_Western_Cactus_01.obj-892031f78eefcc2ad32d45dcd4d7cee5.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Env_Western_Cactus_01.obj-892031f78eefcc2ad32d45dcd4d7cee5.mesh" ]
+
+source_file="res://Art/Western/SM_Env_Western_Cactus_01.obj"
+dest_files=[ "res://.import/SM_Env_Western_Cactus_01.obj-892031f78eefcc2ad32d45dcd4d7cee5.mesh", "res://.import/SM_Env_Western_Cactus_01.obj-892031f78eefcc2ad32d45dcd4d7cee5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

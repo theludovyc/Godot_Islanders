@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_Viking_House_01.obj-a63d17ee775f7e5a6ff635825a4b190f.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_Viking_House_01.obj-a63d17ee775f7e5a6ff635825a4b190f.mesh" ]
+
+source_file="res://Art/Viking/SM_Bld_Viking_House_01.obj"
+dest_files=[ "res://.import/SM_Bld_Viking_House_01.obj-a63d17ee775f7e5a6ff635825a4b190f.mesh", "res://.import/SM_Bld_Viking_House_01.obj-a63d17ee775f7e5a6ff635825a4b190f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

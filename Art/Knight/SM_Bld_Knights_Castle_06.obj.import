@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_Knights_Castle_06.obj-f2164477d48fd8c406a8c73bb8465a3d.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_Knights_Castle_06.obj-f2164477d48fd8c406a8c73bb8465a3d.mesh" ]
+
+source_file="res://Art/Knight/SM_Bld_Knights_Castle_06.obj"
+dest_files=[ "res://.import/SM_Bld_Knights_Castle_06.obj-f2164477d48fd8c406a8c73bb8465a3d.mesh", "res://.import/SM_Bld_Knights_Castle_06.obj-f2164477d48fd8c406a8c73bb8465a3d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
