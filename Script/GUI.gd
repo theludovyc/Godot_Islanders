@@ -5,11 +5,11 @@ signal button_pack_pressed(button_name)
 
 var icon = preload("res://icon.png")
 
-onready var node_score = $ScoreContainer/Score
-onready var node_score_max = $ScoreContainer/ScoreMax
+onready var node_score = $Score
 onready var node_building_panel = $BuildingPanel
 onready var node_building = $BuildingContainer
 onready var node_pack = $PackContainer
+onready var node_counter = $Counter
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,8 +18,8 @@ func _ready():
 func update_score(score:int):
 	node_score.text = str(score)
 	
-func update_score_max(score:int):
-	node_score_max.text = str(score)
+func update_counter(count:int):
+	node_counter.text = str(count)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

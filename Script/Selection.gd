@@ -102,7 +102,7 @@ func _on_Building_area_exited(area):
 func calc_bonus():
 	var list_buildings = radar.get_overlapping_areas()
 	
-	bonus = -2
+	bonus = -1
 	
 	var b_groups = building.get_groups()
 	

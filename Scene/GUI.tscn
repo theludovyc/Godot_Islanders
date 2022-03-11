@@ -32,22 +32,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreContainer" type="HBoxContainer" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 18.0
-margin_top = -68.0
-margin_right = 79.0
-margin_bottom = -28.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Score" type="Label" parent="ScoreContainer"]
+[node name="Score" type="Label" parent="."]
 modulate = Color( 1, 0.654902, 0, 1 )
-margin_top = 13.0
-margin_right = 24.0
-margin_bottom = 27.0
+margin_left = 35.0
+margin_top = 733.0
+margin_right = 59.0
+margin_bottom = 747.0
 text = "000"
 align = 1
 valign = 1
@@ -55,23 +45,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreSeperator" type="Label" parent="ScoreContainer"]
+[node name="Counter" type="Label" parent="."]
 modulate = Color( 1, 0.654902, 0, 1 )
-margin_left = 28.0
-margin_top = 13.0
-margin_right = 33.0
-margin_bottom = 27.0
-text = "/"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ScoreMax" type="Label" parent="ScoreContainer"]
-modulate = Color( 1, 0.654902, 0, 1 )
-margin_left = 37.0
-margin_top = 13.0
-margin_right = 61.0
-margin_bottom = 27.0
+margin_left = 35.0
+margin_top = 698.0
+margin_right = 59.0
+margin_bottom = 712.0
 text = "000"
 align = 1
 valign = 1

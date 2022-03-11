@@ -6,9 +6,10 @@ const column_width = 5
 const column_min_height = 0.25
 const land_width = 3
 const pop_threshold = -0.2
+const counter_max = 3
 
 var score := 0
-var score_max := 2
+var counter := 0
 
 var current_pack_name:String
 
@@ -21,7 +22,7 @@ func _ready():
 		gui.add_button_pack(key)
 	
 	gui.update_score(score)
-	gui.update_score_max(score_max)
+	gui.update_counter(counter)
 	
 	randomize()
 	
@@ -51,16 +52,24 @@ func _ready():
 func _on_Selection_pop_building(bonus):
 	score += bonus
 	
-	if score >= score_max:
-		score = 0
+	gui.update_score(score)
+	
+	counter -= 1
+	
+	if counter == 0:
 		gui.hide_building()
 		selection.reset()
 		gui.show_pack()
 	
-	gui.update_score(score)
+	gui.update_counter(counter)
+	
 	pass # Replace with function body.
 
 func _on_GUI_button_pack_pressed(button_name):
+	counter = counter_max
+	
+	gui.update_counter(counter)
+	
 	if button_name != current_pack_name:
 		current_pack_name = button_name
 		
