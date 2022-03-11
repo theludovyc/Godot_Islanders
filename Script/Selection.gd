@@ -2,6 +2,8 @@ extends Spatial
 
 signal pop_building(bonus)
 
+const rot_speed = PI/8
+
 var mat_selec = preload("res://Art/Material/Selection.tres")
 var mat_selec_red = preload("res://Art/Material/Selection_Red.tres")
 var mat_lambert = preload("res://Art/Material/lambert101.material")
@@ -67,6 +69,12 @@ func _unhandled_input(event):
 			pop_building()
 			add_building()
 			emit_signal("pop_building", bonus)
+			
+	if building != null:
+		if event is InputEventMouseButton && event.button_index == BUTTON_WHEEL_UP:
+			building.rotate_y(rot_speed)
+		if event is InputEventMouseButton && event.button_index == BUTTON_WHEEL_DOWN:
+			building.rotate_y(-rot_speed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -16,10 +16,11 @@ func _ready():
 	pass # Replace with function body.
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton && event.button_index == BUTTON_WHEEL_UP:
-		add_zoom(-zoom_speed)
-	if event is InputEventMouseButton && event.button_index == BUTTON_WHEEL_DOWN:
-		add_zoom(zoom_speed)
+	if selection.building == null:
+		if event is InputEventMouseButton && event.button_index == BUTTON_WHEEL_UP:
+			add_zoom(-zoom_speed)
+		if event is InputEventMouseButton && event.button_index == BUTTON_WHEEL_DOWN:
+			add_zoom(zoom_speed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
