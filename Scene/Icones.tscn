@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scene/Pack/Adventure/Adventure_Tower_01.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Pack/Adventure/Adventure_House_02.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Icones.gd" type="Script" id=3]
 
 [sub_resource type="Environment" id=1]
@@ -15,7 +15,7 @@ script = ExtResource( 3 )
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0.996912, 2.17841, 0.977735 )
+transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0.997, 2.25, 0.978 )
 environment = SubResource( 1 )
 projection = 1
 size = 2.25
@@ -34,6 +34,6 @@ __meta__ = {
 
 [node name="Building" type="Spatial" parent="."]
 
-[node name="Adventure_Tower_01" parent="Building" instance=ExtResource( 2 )]
+[node name="Adventure_House_02" parent="Building" instance=ExtResource( 1 )]
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
