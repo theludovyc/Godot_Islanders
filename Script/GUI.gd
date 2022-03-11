@@ -25,24 +25,23 @@ func update_score_max(score:int):
 #	pass
 
 func add_button_building(button_name:String):
-	if !node_building.has_node(button_name):
-		var button = TextureButton.new()
+	var button = TextureButton.new()
+	
+	button.name = button_name
+	button.rect_min_size = Vector2(96, 96)
+	
+	if Load.pack_icons.has(button_name):
+		button.texture_normal = Load.pack_icons[button_name]
 		
-		button.name = button_name
-		button.rect_min_size = Vector2(96, 96)
+		button.expand = true
 		
-		if Load.pack_icons.has(button_name):
-			button.texture_normal = Load.pack_icons[button_name]
-			
-			button.expand = true
-			
-			button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-		else:
-			button.texture_normal = icon
-		
-		button.connect("pressed", self, "_on_button_building_pressed", [button_name])
-		
-		node_building.add_child(button)
+		button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+	else:
+		button.texture_normal = icon
+	
+	button.connect("pressed", self, "_on_button_building_pressed", [button_name])
+	
+	node_building.add_child(button)
 
 func add_button_pack(button_name:String):
 	var button = TextureButton.new()

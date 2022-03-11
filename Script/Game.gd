@@ -61,14 +61,15 @@ func _on_Selection_pop_building(bonus):
 	pass # Replace with function body.
 
 func _on_GUI_button_pack_pressed(button_name):
-	current_pack_name = button_name
-	
-	var names = Load.packs[button_name]
-	
-	gui.delete_button_building()
-	
-	for _name in names:
-		gui.add_button_building(_name)
+	if button_name != current_pack_name:
+		current_pack_name = button_name
+		
+		var names = Load.packs[button_name]
+		
+		gui.delete_button_building()
+		
+		for _name in names:
+			gui.add_button_building(_name)
 	
 	gui.hide_pack()
 	gui.show_building()
