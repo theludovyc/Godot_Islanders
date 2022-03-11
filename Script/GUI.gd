@@ -7,6 +7,7 @@ var icon = preload("res://icon.png")
 
 onready var node_score = $ScoreContainer/Score
 onready var node_score_max = $ScoreContainer/ScoreMax
+onready var node_building_panel = $BuildingPanel
 onready var node_building = $BuildingContainer
 onready var node_pack = $PackContainer
 
@@ -70,9 +71,11 @@ func show_pack():
 	node_pack.show()
 
 func hide_building():
+	node_building_panel.hide()
 	node_building.hide()
 	
 func show_building():
+	node_building_panel.show()
 	node_building.show()
 	
 func delete_button_building():

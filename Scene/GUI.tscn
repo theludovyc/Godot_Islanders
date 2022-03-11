@@ -22,12 +22,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
-modulate = Color( 1, 1, 1, 0.75 )
+[node name="PanelScore" type="Panel" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -96.0
+margin_right = -928.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,10 +35,10 @@ __meta__ = {
 [node name="ScoreContainer" type="HBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 22.0
-margin_top = -64.0
-margin_right = 83.0
-margin_bottom = -24.0
+margin_left = 18.0
+margin_top = -68.0
+margin_right = 79.0
+margin_bottom = -28.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -75,6 +75,19 @@ margin_bottom = 27.0
 text = "000"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuildingPanel" type="Panel" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.75 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 96.0
+margin_top = -96.0
+margin_right = 35.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
