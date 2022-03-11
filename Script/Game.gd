@@ -42,7 +42,7 @@ func _ready():
 			var noi = noise.get_noise_2d(i, j)
 			
 			if noi > pop_threshold:
-				column.translation = Vector3(column_width*i, column_min_height + noi + -pop_threshold, column_width*j)
+				column.translation = (Vector3(i, noi - pop_threshold, j) * Vector3(column_width, 1, column_width)) + Vector3(-land_width/2*column_width, column_min_height, -land_width/2*column_width)
 				add_child(column)
 	pass # Replace with function body.
 

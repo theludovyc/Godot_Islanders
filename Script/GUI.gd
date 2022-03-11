@@ -49,7 +49,7 @@ func add_button_pack(button_name:String):
 	
 	button.name = button_name
 	
-	button.rect_min_size = Vector2(128, 128)
+	button.rect_min_size = Vector2(120, 120)
 	
 	if Load.pack_icons.has(button_name):
 		button.texture_normal = Load.pack_icons[button_name]

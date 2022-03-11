@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Script/Camera_Origin.gd" type="Script" id=2]
 [ext_resource path="res://Art/Material/Bleu.tres" type="Material" id=3]
@@ -6,8 +6,6 @@
 [ext_resource path="res://Script/Camera.gd" type="Script" id=5]
 [ext_resource path="res://Scene/Selection.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Script/Game.gd" type="Script" id=7]
-
-[sub_resource type="CubeMesh" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -19,11 +17,6 @@ transform = Transform( 0.717081, 0.38435, -0.581438, 0, 0.834213, 0.551442, 0.69
 light_energy = 0.65
 shadow_enabled = true
 shadow_bias = -0.3
-
-[node name="Cube" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477826, -4.51835 )
-mesh = SubResource( 2 )
-material/0 = null
 
 [node name="Selection" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, -4.76837e-07 )
