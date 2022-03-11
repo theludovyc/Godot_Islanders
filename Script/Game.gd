@@ -13,6 +13,8 @@ var counter := 0
 
 var current_pack_name:String
 
+var used_packs:Array = []
+
 onready var gui = $GUI
 onready var selection = $Selection
 
@@ -66,6 +68,11 @@ func _on_Selection_pop_building(bonus):
 	pass # Replace with function body.
 
 func _on_GUI_button_pack_pressed(button_name):
+	if !used_packs.has(button_name):
+		score += 1
+		gui.update_score(score)
+		used_packs.push_back(button_name)
+	
 	counter = counter_max
 	
 	gui.update_counter(counter)
