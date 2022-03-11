@@ -59,16 +59,24 @@ func _ready():
 
 func reset():
 	hide()
-	building_name = ""
-	building.queue_free()
-	building = null
+	
+	if building:
+		building_name = ""
+		building.queue_free()
+		building = null
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed and !building_name.empty() and !isRed:
-			pop_building()
-			add_building()
-			emit_signal("pop_building", bonus)
+		match(event.button_index):
+			BUTTON_LEFT:
+				if event.pressed and !building_name.empty() and !isRed:
+					pop_building()
+					add_building()
+					emit_signal("pop_building", bonus)
+			
+			BUTTON_RIGHT:
+				if event.pressed:
+					reset()
 			
 	if building != null:
 		if event is InputEventMouseButton && event.button_index == BUTTON_WHEEL_UP:
