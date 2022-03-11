@@ -9,7 +9,7 @@ albedo_texture = ExtResource( 1 )
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.425767, 0.5193, 0.650688 )
 
-[node name="Viking_House_01" type="Area" groups=["Viking"]]
+[node name="Viking_Hut_01" type="Area" groups=["Viking"]]
 collision_layer = 2
 collision_mask = 2
 
