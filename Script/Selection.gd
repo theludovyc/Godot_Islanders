@@ -89,15 +89,14 @@ func _process(delta):
 	sprite.look_at(camera_origin.to_global(camera.translation), Vector3.UP)
 
 func _on_Building_area_entered(area):
-	mesh.set_surface_material(0, mat_selec_red)
-	isRed = true
-	pass # Replace with function body.
+	if building:
+		mesh.set_surface_material(0, mat_selec_red)
+		isRed = true
 
 func _on_Building_area_exited(area):
-	if building.get_overlapping_areas().empty():
+	if building and building.get_overlapping_areas().empty():
 		isRed = false
 		mesh.set_surface_material(0, mat_selec)
-	pass # Replace with function body.
 
 func calc_bonus():
 	var list_buildings = radar.get_overlapping_areas()
