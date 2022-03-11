@@ -52,6 +52,10 @@ config/icon="res://icon.png"
 
 Load="*res://Script/Load.gd"
 
+[display]
+
+window/size/height=768
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/TwitchChat/plugin.cfg" )
