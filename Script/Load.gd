@@ -51,5 +51,3 @@ func _ready() -> void:
 				pack_icons[file_name.get_basename()] = load(dir.get_current_dir() + '/' + file_name)
 			
 			file_name = dir.get_next()
-			
-	prints("Load", pack_icons)
