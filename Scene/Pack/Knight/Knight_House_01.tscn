@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.5, 0.25, 0.48 )
 
-[node name="Knight_House_01" type="Area"]
+[node name="Knight_House_01" type="Area" groups=["Knight"]]
 collision_layer = 2
 collision_mask = 2
 

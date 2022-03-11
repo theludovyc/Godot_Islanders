@@ -83,15 +83,31 @@ func _on_Building_area_exited(area):
 		mesh.set_surface_material(0, mat_selec)
 	pass # Replace with function body.
 
+func calc_bonus():
+	var list_buildings = radar.get_overlapping_areas()
+	
+	bonus = -2
+	
+	var b_groups = building.get_groups()
+	
+	if !b_groups.empty():
+		for _building in list_buildings:
+			if _building.is_in_group(building.get_groups()[0]):
+				bonus += 2
+			else:
+				bonus += 1
+	else:
+		bonus = list_buildings.size()
+
 func _on_Radar_area_entered(area):
-	bonus = radar.get_overlapping_areas().size()
-	label.text = str(bonus)
-	pass # Replace with function body.
+	if building:
+		calc_bonus()
+		label.text = str(bonus)
 
 func _on_Radar_area_exited(area):
-	bonus = radar.get_overlapping_areas().size()
-	label.text = str(bonus)
-	pass # Replace with function body.
+	if building:
+		calc_bonus()
+		label.text = str(bonus)
 
 func _on_GUI_button_pressed(button_name):
 	if building:
